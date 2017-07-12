@@ -1,0 +1,68 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+
+  
+<include src="about.wxml"/>
+<view id="tapTest" data-hi="WeChat" bindtap="tapName"> Click me! </view>
+<switch wx:for="{{objectArray}}" wx:key="unique" style="display: block;"> {{item.id}} </switch>
+<button bindtap="switch"> Switch </button>
+<button bindtap="addToFront"> Add to the front </button>
+<switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;"> {{item}} </switch>
+<button bindtap="addNumberToFront"> Add to the front </button>
+
+  <block wx:for="{{[1, 2, 3]}}">
+  <view> {{index}}: </view>
+  <view> {{item}} </view>
+  </block>
+  <view wx:for="{{array2}}">
+  {{index}}: {{item.message}}
+  </view>
+  <view wx:for="{{array2}}" wx:for-index="idx" wx:for-item="itemName">
+  {{idx}}: {{itemName.message}}
+  </view>
+  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i">
+      <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j">
+        <view wx:if="{{i <= j}}">
+          {{i}} * {{j}} = {{i * j}}
+        </view>
+      </view>
+  </view>
+  <view> Hello {{name}}! </view>
+  <button bindtap="changeName"> Click me! </button>
+  <view>{{text}}</view>
+  <button bindtap="changeText"> Change normal data </button>
+  <view>{{num}}</view>
+  <button bindtap="changeNum"> Change normal num </button>
+  <view>{{array[0].text}}</view>
+  <button bindtap="changeItemInArray"> Change Array data </button>
+  <view>{{object.text}}</view>
+  <button bindtap="changeItemInObject"> Change Object data </button>
+  <view>{{newField.text}}</view>
+  <button bindtap="addNewField"> Add new data </button>
+  <button bindtap="bindViewTap"> changeTag </button>
+
+  <button bindtap="getCommonFunc"> getCommonFunc </button>
+  <view wx:for="{{arrayList}}" wx:key="{{item}}"> {{item}} </view>
+  <view wx:if="{{view == 'WEBVIEW'}}"> WEBVIEW </view>
+  <view wx:elif="{{view == 'APP'}}"> APP </view>
+  <view wx:else> MINA </view>
+
+  <template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+  </template>
+  <template is="staffName" data="{{...staffA}}"></template>
+  <template is="staffName" data="{{...staffB}}"></template>
+  <template is="staffName" data="{{...staffC}}"></template>
+  <view wx:for="{{[1,2,3]}} ">
+  {{item}}
+  </view>
+  <view wx:for="{{[1,2,3]}}">
+  {{item}}
+  </view>
+</view>

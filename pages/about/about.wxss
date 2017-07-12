@@ -1,0 +1,23 @@
+.bc_green,.bc_red,.bc_yellow,.bc_blue{
+  height:70px;
+}
+.bc_green{
+  background:green;
+}
+.bc_red{
+  background:red;
+}
+.bc_yellow{
+  background:yellow;
+}
+.bc_blue{
+  background:blue;
+}
+swiper{
+  height:500px;
+}
+swiper swiper-item image{
+  /*display:block;*/
+  width:100%;
+  /*height:300px;*/
+}
